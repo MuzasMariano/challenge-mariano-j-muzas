@@ -1,0 +1,125 @@
+@use 'variables' as *;
+
+.navbar {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $navbar-border-default;
+
+    &__container {
+        margin: auto 32px;
+
+        @media (max-width: 992px) {
+            margin: 0 auto;
+        }
+    }
+
+    a {
+        transition: text-shadow 0.2s ease;
+        font-size: 1rem;
+        line-height: 20px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    ul.navbar-nav {
+        margin: 0 auto;
+        column-gap: 72px;
+
+        @media (max-width: 1065px) {
+            column-gap: 10px;
+        }
+
+        li.nav-item {
+            
+            &:last-child {
+                border-bottom: none;
+            }
+
+            @media (max-width: 767px) {
+                border-bottom: 1px solid $color-divisor-light;
+            }
+            
+            a {
+                color: $text-default;
+                position: relative;
+                padding: 0;
+
+                @media (max-width: 767px) {
+                    padding: 1rem;
+                }
+
+                &.active {
+                    color: #000; 
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: -31px;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: $tab-navbar-selection-indicator-background-active;
+                        z-index: 10;
+
+                        @media (max-width: 992px) {
+                            bottom: -35px;
+                        }
+
+                        @media (max-width: 767px) {
+                            display: none;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -29px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 0;
+                        height: 0;
+                        border-left: 9px solid transparent;
+                        border-right: 9px solid transparent;
+                        border-bottom: 12px solid $tab-navbar-selection-indicator-background-active;
+                        z-index: 10;
+
+                        @media (max-width: 992px) {
+                            bottom: -33px;
+                        }
+
+                        @media (max-width: 767px) {
+                            display: none;
+                        }
+                    }
+                }
+                
+                &:hover, &:focus {
+                    text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor;
+                }
+            }
+        }
+    }
+
+    a.btn-book-now {
+        color: $button-primary-text-default;
+        background-color: $button-primary-background-default;
+        width: 100%; 
+        max-width: 139px;
+        min-height: 48px;
+        padding: 12px 40px 12px 40px;
+        border-radius: 208px;
+        border: none;
+
+        &:hover, &:focus {
+            opacity: .8;
+        }
+
+        @media (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
+}
+
+
+  
