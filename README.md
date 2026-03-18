@@ -1,3 +1,37 @@
+Challenge Mariano J. Muzas Roa.
+Angular CLI       : 21.2.2
+Node.js           : 24.14.0
+Package Manager   : npm 11.9.0
+Operating System  : win32 x64
+Boottsrap: 5.3
+Metodología BEM cuando ha sido necesario. Por ejemplo en el footer.
+Hay algunas variables que tienen el mismo color, no las he unificado pensando que en un proyecto real alguno de estos colores podría cambiar. Pero esto en un contexto profesional tendría que ser confirmado antes de unificar variables o no.
+
+Pasos para la visualización dle proyecto en local:
+
+    Clonar el repositorio
+    Descarga el proyecto en la terminal:
+    Bash
+
+    git clone https://github.com/MuzasMariano/challenge-mariano-j-muzas.git
+
+    Entrar al directorio usando la terminal.
+    Muévete a la carpeta que se acaba de crear:
+
+    cd challenge-mariano-j-muzas
+
+    Instalar dependencias
+    npm install
+
+    Levantar el servidor local
+
+    npm start
+
+    (O también puedes usar ng serve si tienes el CLI instalado globalmente).
+
+    Ver el proyecto:
+    Una vez que la terminal indique que la compilación fue exitosa, abre http://localhost:4200
+
 # ChallengeMarianoJMuzas
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.

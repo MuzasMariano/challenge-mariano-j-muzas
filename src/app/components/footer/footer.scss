@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+.footer {
+
+    &__container {
+        border-top: 1px solid $footer-container-border;
+    }
+
+    &__logo {
+        background-color: $footer-background-default;
+        padding: 48px 40px;
+    }
+
+    &__bottom-bar {
+        background-color: $footer-background-bottom-bar-default;
+        padding: 16px;
+
+        p {
+            color: $footer-bottom-bar-color-default;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}
