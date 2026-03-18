@@ -1,0 +1,114 @@
+@use 'variables' as *;
+
+.carousel {
+    @media (max-width: 767px) {
+        height: 55vh;
+    }
+    .carousel-indicators {
+        button {
+            border: 1px solid $indicator-slider-border-default;
+            background-color: $indicator-slider-background-default;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-radius: 100%;
+
+            &.active {
+                background-color: $indicator-slider-background-selected-default;
+            }
+        }
+    }
+    
+    .carousel-inner {
+        .carousel-item {
+            img {
+                @media (max-width: 767px) {
+                    height: 55vh;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .carousel-caption {
+                bottom: auto; 
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                h5, p {
+                    color: $text-default-white;
+                }
+
+                h5 {
+                    font-weight: 700;
+                    font-size: 30px;
+                    line-height: 34px;
+                }
+
+                p {
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+
+                .btn-carousel {
+                    color: $button-primary-background-default;
+                    background-color: $button-accent-background-default;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 48px;
+                    padding: 0 40px;
+                    box-sizing: border-box;
+                    font-size: 16px;
+                    line-height: 1;
+                    font-weight: 600;
+                    text-decoration: none;
+                    border-radius: 100vmax;
+                    border: none;
+                    transition: filter 0.2s ease;
+
+                    &:hover, &:focus {
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+    }
+
+
+    button[class^="carousel-control-"], a[class^="carousel-control-"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $button-slider-navigation-background-default;
+        border-radius: 2px;
+        padding: 8px;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50%;
+        opacity: 1;
+
+        &:hover, &:focus {
+            opacity: .8;
+        }
+
+        span.carousel-control-next-icon, span.carousel-control-prev-icon {
+            display: inline-block;
+            width: .808rem;
+            height: .5rem;
+            min-width: auto;
+            min-height: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+
+        span.carousel-control-next-icon {
+            background-image: url("/assets/icons/carousel-control-next.svg");
+        }
+
+        span.carousel-control-prev-icon {
+            background-image: url("/assets/icons/carousel-control-prev.svg");
+        }
+    }
+}
