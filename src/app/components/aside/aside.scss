@@ -1,0 +1,281 @@
+@use 'variables' as *;
+
+.filter {
+  background-color: $filter-background-default;
+  width: 264px;
+  border-radius: 1.5rem;
+  transition: transform .8s ease-in-out;
+  
+  @media (max-width: 991.98px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1050;
+    transform: translateX(-136%);
+    overflow-y: auto;
+    border-radius: 0;
+
+    &.active {
+      transform: translateX(-19%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: 992px) {
+    display: block;
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+    border-radius: 1.5rem;
+  }
+
+  .filter-overlay {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1040;
+  }
+
+  .close-filter-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+
+  &__title-top {
+    border-bottom: 1px solid $filter-divisor;
+
+    h4 {
+      color: $filter-section-color-default;
+      font-weight: 700;
+      font-size: 1.125rem;
+      line-height: 24px;
+      padding: $filter-padding;
+    }
+  }
+
+  &__menu {
+    padding: $filter-padding;
+  
+    .filter-menu {
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover, &.active {
+          .filter-menu__title-label svg path {
+            stroke: $filter-filter-name-text-open;
+          }
+          
+          .filter-menu__title {
+            color: $filter-filter-name-text-open;
+          }
+
+          .filter-menu__arrow svg path {
+            fill: $filter-filter-name-text-open;
+          }
+        }
+      }
+
+      &__title-label {
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+
+      &__title {
+        color: $filter-section-color-default;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 20px;
+        margin-left: 0.5rem;
+      }
+
+      &__arrow {
+        transition: transform 0.3s ease;
+        fill: currentColor;
+
+        &--rotated {
+          transform: rotate(180deg);
+        }
+      }
+
+      &__content {
+        gap: 1rem;
+        padding: 0.5rem 0 0.5rem 2rem;
+        animation: fadeIn 0.2s ease-out;
+
+        small {
+          color: $filters-link-default;
+          text-decoration: underline;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: .875rem;
+          line-height: 20px;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &__arrow {
+        transition: transform 0.3s ease;
+        fill: currentColor;
+
+        &--rotated {
+          transform: rotate(88deg);
+        }
+      }
+
+      &__checkbox-group {
+        color: $filter-section-color-default;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: .75rem;
+      }
+
+      &__label {
+        color: $filter-section-color-default;
+        font-weight: 600;
+        font-size: .875rem;
+        line-height: 20px;
+        margin: auto .5rem;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+
+      &__input {
+        appearance: none;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+
+        &:checked {
+          background-color: $form-checkbox-box-background-selected;
+          border-color: $form-checkbox-box-background-selected;
+
+          &::after {
+            content: '';
+            position: absolute;
+            color: $form-checkbox-check-icon-default;
+            font-size: 12px;
+            top: 1px;
+            left: 1px;
+            width: 12px;
+            height: 12px; 
+            background-image: url('/assets/icons/stroke.svg'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// Tooltip
+.custom-tooltip {
+  position: absolute;
+  background-color: $overlay-background-default;
+  color: $overlay-text-default;
+  padding: 6px 10px;
+  font-size: .875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: 0px 4px 8px 0px #00000033;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $overlay-background-default transparent transparent transparent;
+  }
+}
+
+
+// inputs
+.range-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+    width: 100%;
+    min-height: 3rem;
+    max-height: 3rem;
+    border-radius: 208px;
+    background-color: $form-text-input-background-default;
+    border: 1px solid $form-text-input-border-default;
+    margin-bottom: 1rem;
+    font-size: .875rem;
+
+  &::placeholder {
+    color: $form-text-input-placeholder-default;
+  }
+
+  &:focus {
+    border: 2px solid $form-text-input-border-default;
+  }
+}
+
+.form-input--labeled {
+  padding-left: 3rem;
+  position: relative;
+  background-image: url('/assets/icons/label.svg'); 
+  background-repeat: no-repeat;
+  background-position: 0.75rem center;
+  background-size: 1.25rem;
+}
+
+//show hide filters
+.show-filters {
+  width: 100%;
+  max-width: 152px;
+  margin-bottom: 1.5rem;
+  padding: .5rem .875rem;
+  border-radius: 208px;
+  background-color: $show-filter-background-default;
+  border: 1px solid;
+  border-image-slice: 1;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  p {
+    color: $show-filter-color-default;
+    margin-left: .625rem;
+  }
+}

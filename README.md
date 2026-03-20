@@ -4,7 +4,7 @@ Node.js           : 24.14.0
 Package Manager   : npm 11.9.0
 Operating System  : win32 x64
 Boottsrap: 5.3
-Metodología BEM cuando ha sido necesario. Por ejemplo en el footer.
+Metodología BEM cuando ha sido necesario. Por ejemplo en el aside, título y footer.
 Hay algunas variables que tienen el mismo color, no las he unificado pensando que en un proyecto real alguno de estos colores podría cambiar. Pero esto en un contexto profesional tendría que ser confirmado antes de unificar variables o no.
 
 Pasos para la visualización dle proyecto en local:
