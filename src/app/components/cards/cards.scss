@@ -1,0 +1,163 @@
+@use 'variables' as *;
+
+.cards-container {
+    margin-bottom: 4.5rem;
+}
+
+.cards {
+    a {
+        text-decoration: none;
+    }
+
+    h3 {
+        color: $text-default;
+        font-weight: 600;
+        font-size: 1.375rem;
+        line-height: 24px;
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        background-color: $card-background-default;
+        box-shadow: $card-boxshadow;
+        border-radius: 1.5rem;
+        margin: 1.5rem auto;
+        width: 16.5rem;
+        max-width: 100%;
+
+        &__media {
+            img {
+                border-radius: 1.5rem 1.5rem 0 0;
+                width: 16.5rem;
+                height: 11.75rem;
+                object-fit: cover;
+                display: block;
+            }
+
+            a {
+                color: $text-default;
+                background-color: $primary-background;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 3.813rem;
+                height: 1.5rem;
+                border-radius: 40px;
+                font-size: .75rem;
+                line-height: 1rem;
+                padding: 0.25rem .75rem;
+
+                &:hover, &:focus {
+                    opacity: .8;
+                }
+            }
+        }
+
+        .card-body {
+            padding: 1rem;
+
+            h4 {
+                color: $card-title-default;
+                font-weight: 700;
+                font-size: .875rem;
+                line-height: 18px;
+            }
+
+            p {
+                color: $card-text-default;
+                font-weight: 500;
+                font-size: .875rem;
+                line-height: 18px;
+                margin-left: .375rem;
+            }
+
+            &__title {
+                h5 {
+                    color: $text-default;
+                    font-weight: 700;
+                    font-size: 1.125rem;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        &__footer {
+            padding: 1rem;
+            background-color: $card-circuit-card-footer-background-default;
+        }
+
+        &__price {
+            p {
+                color: $text-default;
+                font-weight: 500;
+                font-size: .75rem;
+                line-height: 1rem;
+            }
+
+            h5 {
+                color: $text-default;
+                margin: .125rem auto;
+                font-weight: 700;
+                font-size: 1.5vw;
+                line-height: 1.5rem;
+
+                @media (max-width: 992px) {
+                    font-size: 1.375rem;
+                }
+            }
+        }
+
+         &__link {
+            color: $card-link;
+            font-weight: 600;
+            font-size: .93vw;
+            line-height: 1rem;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            transition: all 0.3s ease;
+            position: relative;
+
+            &:hover, &:focus {
+                opacity: .8;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                color: $form-checkbox-check-icon-default;
+                top: 5px;
+                left: 105%;
+                width: 8.62px;
+                height: 5.33px; 
+                background-image: url('/assets/icons/angle-card.svg'); 
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            @media (max-width: 992px) {
+                font-size: .875rem;
+            }
+        }
+
+        &__reserve {
+            color: $card-button-text-default;
+            background-color: $card-background-default;
+            border: 1px solid $card-button-border-default;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 24px;
+            width: 7.063rem;
+            height: 2.5rem;
+            min-height: 40px;
+            border-radius: 208px;
+            padding: .5rem 1.5rem;
+
+            &:hover, &:focus {
+                opacity: .8;
+            }
+        }
+    }
+}
