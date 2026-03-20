@@ -12,13 +12,13 @@ He usado PX y rem para mostrar el manejo de ambos.
 No he podido terminar el desplegable de las cards y el mockeo de datos.
 
 Ramas usadas:
-17-03-header-nav
-18-03-footer
-18-03-carousel
-18-03-title
-18-03-aside
-20-03-grid-cards
-develope
+17-03-header-nav |
+18-03-footer |
+18-03-carousel |
+18-03-title |
+18-03-aside |
+20-03-grid-cards |
+develope |
 
 Se puede ver el proyecto completo en rama: develope
 
