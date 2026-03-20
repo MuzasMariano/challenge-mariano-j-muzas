@@ -9,8 +9,18 @@ Metodología BEM cuando ha sido necesario. Por ejemplo en el aside, cards, title
 Hay algunas variables que tienen el mismo color, no las he unificado pensando que en un proyecto real alguno de estos colores podría cambiar. Pero esto en un contexto profesional tendría que ser confirmado antes de unificar variables o no.
 HTML5, SASS, 100% responsive.
 He usado PX y rem para mostrar el manejo de ambos.
-
 No he podido terminar el desplegable de las cards y el mockeo de datos.
+
+Ramas usadas:
+17-03-header-nav
+18-03-footer
+18-03-carousel
+18-03-title
+18-03-aside
+20-03-grid-cards
+develope
+
+Se puede ver el proyecto completo en rama: develope
 
 Pasos para la visualización dle proyecto en local:
 
